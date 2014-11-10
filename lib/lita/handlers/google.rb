@@ -17,7 +17,7 @@ module Lita
         end
       end
 
-      route(/^(?:google|g)\s+(.+)/i, :search, command: true, help: {
+      route(/^\!(?:google|g)\s+(.+)/i, :search, help: {
         "google QUERY" => "Return the first Google search result for QUERY."
       })
 
