@@ -32,7 +32,7 @@ module Lita
         )
 
         if http_response.status == 200
-          data = MultiJson.load(http_response.body)
+          data = JSON.parse(http_response.body)
           result = data["responseData"]["results"].first
 
           if result
