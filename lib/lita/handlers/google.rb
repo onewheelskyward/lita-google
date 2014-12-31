@@ -21,6 +21,10 @@ module Lita
         "google QUERY" => "Return the first Google search result for QUERY."
       })
 
+      route(/^\!(?:youtube|y)\s+(.+)/i, :youtube, help: {
+        "youtube QUERY" => "Return the first Youtube search result for QUERY."
+      })
+
       def search(response)
         query = response.matches[0][0]
 
@@ -47,6 +51,11 @@ module Lita
             "Non-200 response from Google for search query: #{query}"
           )
         end
+      end
+
+      def youtube(response)
+        response.matches[0][0] = 'site:youtube.com ' + response.matches[0][0]
+        search response
       end
     end
 
