@@ -17,11 +17,11 @@ module Lita
         end
       end
 
-      route(/^\!(?:google|g)\s+(.+)/i, :search, help: {
+      route(/^go*o*g*l*e*\s+(.+)/i, :search, help: {
         "google QUERY" => "Return the first Google search result for QUERY."
       })
 
-      route(/^\!(?:googtube)\s+(.+)/i, :youtube, help: {
+      route(/^(?:googtube)\s+(.+)/i, :youtube, help: {
         "googtube QUERY" => "Return the first Youtube search result for QUERY."
       })
 
